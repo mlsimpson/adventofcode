@@ -37,5 +37,6 @@ for row in matrix:
         for val2 in row:
             if (val2 % val1) == 0 and (val2 - val1) != 0:
                 total = total + int(val2 / val1)
+                break
 
 print(total)
