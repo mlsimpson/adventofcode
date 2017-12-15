@@ -31,12 +31,15 @@ print("Part 2")
 
 total = 0
 
-for row in matrix:
-    row = [int(s) for s in row.split(" ")]
+def getvalue(row):
     for val1 in row:
         for val2 in row:
             if (val2 % val1) == 0 and (val2 - val1) != 0:
-                total = total + int(val2 / val1)
-                break
+                return int(val2 / val1)
+    return 0
+
+for row in matrix:
+    row = [int(s) for s in row.split(" ")]
+    total = total + getvalue(row)
 
 print(total)
